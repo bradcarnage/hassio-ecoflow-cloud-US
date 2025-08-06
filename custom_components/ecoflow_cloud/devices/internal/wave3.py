@@ -59,7 +59,7 @@ class Wave3(BaseDevice):
 
     def numbers(self, client: EcoflowApiClient) -> list[BaseNumberEntity]:
         return [
-            SetTempEntity(client, self, "pd.setTemp", "Set Temperature", 0, 40,
+            SetTempEntity(client, self, "pd.setTemp", "Set Temperature", 60, 86,
                           lambda value: {"moduleType": 1, "operateType": "setTemp",
                                          "sn": self.device_info.sn,
                                          "params": {"setTemp": int(value)}}),
